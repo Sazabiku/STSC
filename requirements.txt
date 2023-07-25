@@ -1,3 +1,5 @@
 streamlit
 pandas
-time
+numpy
+numba
+telethon
