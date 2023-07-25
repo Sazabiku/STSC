@@ -42,18 +42,6 @@ keys_search = ['Антонов Вячеслав Олегович', 'Антоно
 action_count = 0
 
 
-st.sidebar.title('Параметры общения с EOG')
-
-
-if st.sidebar.button('Начать общение'):
-    client.send_message(target_chat, '/start')
-
-
-st_name = st.sidebar.text_input("Введите имя для поиска"
-)
-
-keys_search.append(st_name)
-
 
 #Начинаем общение с ботом
 async def starter():
@@ -173,6 +161,17 @@ if __name__ == "__main__":
     with client:
         #client.loop.run_until_complete(starter())
         client.loop.run_forever()
+    st.sidebar.title('Параметры общения с EOG')
+
+
+    if st.sidebar.button('Начать общение'):
+        client.send_message(target_chat, '/start')
+
+
+    st_name = st.sidebar.text_input("Введите имя для поиска"
+    )
+
+    keys_search.append(st_name)
 #with open('styles.css') as f:
 #    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
     
